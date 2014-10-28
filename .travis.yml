@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "0.10"
+
+env:
+  global:
+    # GH_TOKEN
+    - secure: X6vAWjihBRRoZws47N3O58aWc3mXQynrUnFik50FdSB+QhSp5lWw/aW59HQt29MWxSIsrD56u+1inck7o3kqm9AZun1GEDMFLO/35DQL4+EUbMcJpl2pUULdVnhWPrjWwStK2txl21KkXIEbLLErhQtFk8jn9UA6yFfLr38SItk=
+
+after_success:
+  - chmod +x build/update-demo.sh
+  - ./build/update-demo.sh
