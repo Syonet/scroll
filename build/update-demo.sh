@@ -9,6 +9,7 @@ git config user.name "${GIT_NAME}"
 git config user.email "${GIT_MAIL}"
 
 # Faz merge do master no gh-pages e depois push
+git fetch
 git checkout gh-pages
 git merge master --no-edit
 git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@github.com/Syonet/scroll.git" gh-pages:gh-pages > /dev/null 2>&1
