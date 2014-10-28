@@ -1,3 +1,7 @@
+/*!
+ * syoScroll - v0.0.1
+ * https://github.com/Syonet/scroll
+ */
 "use strict";
 ((function(ng) {
   var $ = ng.element;

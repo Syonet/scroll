@@ -1,4 +1,8 @@
+var fs = require( "fs" );
+var pkg = require( "./package.json" );
+
 var gulp = require( "gulp" );
+var header = require( "gulp-header" );
 var less = require( "gulp-less" );
 var plumber = require( "gulp-plumber" );
 var traceur = require( "gulp-traceur" );
@@ -7,6 +11,9 @@ gulp.task( "less", function() {
     gulp.src( "src/styles/syoScroll.less" )
         .pipe( plumber() )
         .pipe( less() )
+        .pipe( header( fs.readFileSync( "./build/banner.txt", "utf8" ), {
+            pkg: pkg
+        }))
         .pipe( gulp.dest( "./dist/" ) );
 });
 
@@ -14,6 +21,9 @@ gulp.task( "js", function() {
     gulp.src( "src/syoScroll.js" )
         .pipe( plumber() )
         .pipe( traceur() )
+        .pipe( header( fs.readFileSync( "./build/banner.txt", "utf8" ), {
+            pkg: pkg
+        }))
         .pipe( gulp.dest( "./dist/" ) );
 });
 

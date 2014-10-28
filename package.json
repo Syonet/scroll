@@ -1,12 +1,15 @@
 {
+    "name": "syoScroll",
+    "version": "0.0.1",
+    "homepage": "https://github.com/Syonet/scroll",
     "dependencies": {
+        "angular": "~1.3.0",
         "gulp": "latest",
-        "gulp-es6-module-transpiler": "latest",
+        "gulp-header": "latest",
         "gulp-less": "latest",
         "gulp-plumber": "latest",
         "gulp-traceur": "latest",
-        "gulp-watch": "~1.1.0",
-        "angular": "~1.3.0"
+        "gulp-watch": "~1.1.0"
     },
     "scripts": {
         "test": "gulp"
