@@ -1,0 +1,49 @@
+/* Scroll Rail
+   ---------------------------------------------------------------------------------------------- */
+
+syo-scroll-rail {
+  position: fixed;
+  display: block;
+  box-sizing: content-box;
+
+  &:after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: fade( #000, 5% );
+    border-radius: @rail-size / 2;
+    opacity: 0;
+    transition: opacity .15s linear;
+    content: "";
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
+syo-scroll-rail[axis="x"] {
+  right: auto !important;
+  bottom: auto !important;
+  min-width: 1px;
+  height: @rail-size;
+  padding-top: @rail-excess;
+
+  &:after {
+    width: calc( ~"100% - @{rail-retraction} * 2" );
+    margin: 0 @rail-retraction;
+  }
+}
+
+syo-scroll-rail[axis="y"] {
+  right: auto !important;
+  bottom: auto !important;
+  width: @rail-size;
+  min-height: 1px;
+  padding-left: @rail-excess;
+
+  &:after {
+    height: calc( ~"100% - @{rail-retraction} * 2" );
+    margin: @rail-retraction 0;
+  }
+}

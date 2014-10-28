@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="syoScroll">
+    <head>
+        <title>syoScroll Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dist/syoScroll.css">
+        <style>
+            .overflow-container {
+                width: 500px;
+                height: 500px;
+            }
+
+            .overflown-element {
+                width: 1000px;
+                height: 1000px;
+                background: linear-gradient( to bottom right, #333, #ccc );
+            }
+        </style>
+    </head>
+    <body ng-init="width = 500; height = 500">
+        <label>Largura:</label>
+        <input type="number" ng-model="width">
+
+        <label>Altura:</label>
+        <input type="number" ng-model="height">
+
+        <div class="overflow-container syo-scroll" ng-style="{ width: ( width + 'px' ), height: ( height + 'px' ) }">
+            <div class="overflown-element"></div>
+        </div>
+
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="dist/syoScroll.js"></script>
+    </body>
+</html>

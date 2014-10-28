@@ -1,0 +1,25 @@
+// Scroll Bar
+// -------------------------------------------------------------------------------------------------
+
+syo-scroll-bar {
+  position: absolute;
+  display: block;
+  background: fade( #000, 10% );
+  border-radius: @rail-size / 2;
+  transition: all .15s linear;
+  transition-property: opacity, background;
+}
+
+syo-scroll-rail:hover syo-scroll-bar {
+  background: fade( #000, 25% );
+}
+
+syo-scroll-rail[axis="x"] syo-scroll-bar {
+  left: 0;
+  height: calc( ~"100% - @{rail-excess}" );
+}
+
+syo-scroll-rail[axis="y"] syo-scroll-bar {
+  top: 0;
+  width: calc( ~"100% - @{rail-excess}" );
+}
