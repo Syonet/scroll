@@ -1,5 +1,5 @@
 .syo-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 /* Scroll Rail
    ---------------------------------------------------------------------------------------------- */
