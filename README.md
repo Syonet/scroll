@@ -1,5 +1,6 @@
 # syoScroll
-Diretiva Angular.js para criar uma scrollbar estilosa em um elemento.
+Diretiva Angular.js para criar uma scrollbar estilosa em um elemento.  
+[Exemplo](https://syonet.github.io/scroll)
 
 ## Utilização
 Adicione a classe `.syo-scroll` a qualquer elemento que pode criar uma scrollbar:
