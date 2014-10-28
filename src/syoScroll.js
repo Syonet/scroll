@@ -90,7 +90,13 @@
 
             updateRails();
 
-            element.on( "mousewheel wheel", e => {
+            element.on( "mouseenter", () => {
+                barX.addClass( "syo-active" );
+                barY.addClass( "syo-active" );
+            }).on( "mouseleave", () => {
+                barX.removeClass( "syo-active" );
+                barY.removeClass( "syo-active" );
+            }).on( "mousewheel wheel", e => {
                 var delta;
                 var { scrollLeft, scrollTop } = element[ 0 ];
                 e = e.originalEvent || e;

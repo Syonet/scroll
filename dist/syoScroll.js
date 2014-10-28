@@ -79,7 +79,13 @@
       barY = $compile(barY.attr("target", id))(scope);
       element.after(barX).after(barY);
       updateRails();
-      element.on("mousewheel wheel", (function(e) {
+      element.on("mouseenter", (function() {
+        barX.addClass("syo-active");
+        barY.addClass("syo-active");
+      })).on("mouseleave", (function() {
+        barX.removeClass("syo-active");
+        barY.removeClass("syo-active");
+      })).on("mousewheel wheel", (function(e) {
         var delta;
         var $__0 = element[0],
             scrollLeft = $__0.scrollLeft,

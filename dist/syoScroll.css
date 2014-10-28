@@ -12,7 +12,9 @@
 syo-scroll-rail {
   position: fixed;
   display: block;
+  opacity: 0;
   box-sizing: content-box;
+  transition: opacity .15s linear;
 }
 syo-scroll-rail:after {
   display: block;
@@ -20,11 +22,10 @@ syo-scroll-rail:after {
   height: 100%;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  opacity: 0;
-  transition: opacity .15s linear;
   content: "";
 }
-syo-scroll-rail:hover:after {
+syo-scroll-rail:hover,
+syo-scroll-rail.syo-active {
   opacity: 1;
 }
 syo-scroll-rail[axis="x"] {

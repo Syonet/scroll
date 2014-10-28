@@ -4,7 +4,9 @@
 syo-scroll-rail {
   position: fixed;
   display: block;
+  opacity: 0;
   box-sizing: content-box;
+  transition: opacity .15s linear;
 
   &:after {
     display: block;
@@ -12,12 +14,11 @@ syo-scroll-rail {
     height: 100%;
     background: fade( #000, 5% );
     border-radius: @rail-size / 2;
-    opacity: 0;
-    transition: opacity .15s linear;
     content: "";
   }
 
-  &:hover:after {
+  &:hover,
+  &.syo-active {
     opacity: 1;
   }
 }
