@@ -4,6 +4,7 @@
         <title>syoScroll Demo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//syonet.github.io/bootstrap/dist/bootstrap.css">
         <link rel="stylesheet" href="dist/syoScroll.css">
         <style>
             .overflow-container {
@@ -18,15 +19,29 @@
             }
         </style>
     </head>
-    <body ng-init="width = 500; height = 500">
-        <label>Largura:</label>
-        <input type="number" ng-model="width">
+    <body class="syo-body-navbar" ng-init="width = 500; height = 500">
+        <div class="syo-navbar syo-navbar-fixed-top">
+            <div class="container">
+                <span class="syo-navbar-title">Demo syoScroll</span>
+            </div>
+        </div>
 
-        <label>Altura:</label>
-        <input type="number" ng-model="height">
+        <div class="container container-vertical">
+            <form>
+                <div class="syo-field syo-field-inline">
+                    <label>Largura:</label>
+                    <input type="number" ng-model="width">
+                </div>
 
-        <div class="overflow-container syo-scroll" ng-style="{ width: ( width + 'px' ), height: ( height + 'px' ) }">
-            <div class="overflown-element"></div>
+                <div class="syo-field syo-field-inline">
+                    <label>Altura:</label>
+                    <input type="number" ng-model="height">
+                </div>
+            </form>
+
+            <div class="overflow-container syo-scroll" ng-style="{ width: ( width + 'px' ), height: ( height + 'px' ) }">
+                <div class="overflown-element"></div>
+            </div>
         </div>
 
         <script src="node_modules/angular/angular.js"></script>
