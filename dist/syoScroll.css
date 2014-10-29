@@ -22,11 +22,18 @@ syo-scroll-rail:after {
   height: 100%;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
+  opacity: 0;
   content: "";
+}
+syo-scroll-rail:hover:after {
+  opacity: 1;
 }
 syo-scroll-rail:hover,
 syo-scroll-rail.syo-active {
   opacity: 1;
+}
+syo-scroll-rail.syo-disabled {
+  opacity: 0;
 }
 syo-scroll-rail[axis="x"] {
   right: auto !important;

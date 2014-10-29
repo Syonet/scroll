@@ -14,12 +14,21 @@ syo-scroll-rail {
     height: 100%;
     background: fade( #000, 5% );
     border-radius: @rail-size / 2;
+    opacity: 0;
     content: "";
+  }
+
+  &:hover:after {
+    opacity: 1;
   }
 
   &:hover,
   &.syo-active {
     opacity: 1;
+  }
+
+  &.syo-disabled {
+    opacity: 0;
   }
 }
 

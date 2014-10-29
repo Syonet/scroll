@@ -10,18 +10,14 @@
     var updateRail = item => {
         var rail = {};
         var bar = {};
+        var disabled = false;
         var ourRect = item.rail[ 0 ].getBoundingClientRect();
         var targetRect = item.target.getBoundingClientRect();
 
         if ( item.axis === "x" ) {
             rail.width = targetRect.width;
             bar.width = ( item.target.clientWidth / item.target.scrollWidth ) * rail.width;
-
-            if ( bar.width === rail.width ) {
-                bar.opacity = 0;
-            } else {
-                bar.opacity = 1;
-            }
+            disabled = bar.width === rail.width;
 
             bar.width += "px";
             rail.left = targetRect.left;
@@ -29,12 +25,7 @@
         } else {
             rail.height = targetRect.height;
             bar.height = ( item.target.clientHeight / item.target.scrollHeight ) * rail.height;
-
-            if ( bar.height === rail.height ) {
-                bar.opacity = 0;
-            } else {
-                bar.opacity = 1;
-            }
+            disabled = bar.height === rail.height;
 
             bar.height += "px";
             rail.top = targetRect.top;
@@ -44,7 +35,8 @@
         // Aplica o sufixo px em todos os valores
         ng.forEach( rail, applyPx );
 
-        item.rail.css( rail );
+        // Aplica as propriedades CSS, e desabilita o trilho caso necessário
+        item.rail.css( rail ).toggleClass( "syo-disabled", disabled );
         item.bar.css( bar );
     };
 
