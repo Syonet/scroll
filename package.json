@@ -8,7 +8,7 @@
         "gulp-header": "latest",
         "gulp-less": "latest",
         "gulp-plumber": "latest",
-        "gulp-traceur": "latest",
+        "gulp-babel": "^5.2.1",
         "gulp-watch": "~1.1.0"
     },
     "scripts": {

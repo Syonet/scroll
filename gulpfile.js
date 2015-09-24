@@ -5,7 +5,7 @@ var gulp = require( "gulp" );
 var header = require( "gulp-header" );
 var less = require( "gulp-less" );
 var plumber = require( "gulp-plumber" );
-var traceur = require( "gulp-traceur" );
+var babel = require( "gulp-babel" );
 
 gulp.task( "less", function() {
     gulp.src( "src/styles/syoScroll.less" )
@@ -20,7 +20,7 @@ gulp.task( "less", function() {
 gulp.task( "js", function() {
     gulp.src( "src/syoScroll.js" )
         .pipe( plumber() )
-        .pipe( traceur() )
+        .pipe( babel() )
         .pipe( header( fs.readFileSync( "./build/banner.txt", "utf8" ), {
             pkg: pkg
         }))
